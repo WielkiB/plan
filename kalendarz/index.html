@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kalendarz akademicki 2026/2027 – PŚk</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="app">
+<div class="top">
+ <div class="title"><h1>Kalendarz akademicki</h1><p>Politechnika Świętokrzyska · 2026/2027 · studia stacjonarne i niestacjonarne</p></div>
+ <div class="controls">
+  <div class="seg cycle">
+   <button class="active" data-v="standard">Cykl standardowy</button>
+   <button data-v="msc1">I semestr II stopnia</button>
+ </div>
+ <label class="switch-control">
+  <input type="checkbox" id="toggle-ns" checked>
+  <span class="switch"></span>
+  <span>Niestacjonarne</span>
+</label>
+</div>
+</div>
+<div class="toolbar"><div id="periodTitle"></div></div>
+<div class="legend">
+ <span><i class="teaching"></i>Dzień zajęć stacjonarnych</span>
+ <span><i class="grayday"></i>Weekend / dzień bez zajęć</span>
+ <span><i class="holidaymark"></i>Święto</span>
+ <span><i class="border-meeting"></i>Zjazd niestacjonarnych</span>
+ 
+ <span><i class="lecture"></i>Zjazd – wykłady</span>
+ <span><i class="replacement"></i>Zamiana planu</span>
+ <span><i class="exam"></i>Sesja</span>
+ <span><i class="resit"></i>Poprawki</span>
+ <span><i class="registration"></i>Rejestracja</span>
+ <span><i class="inauguration"></i>Inauguracja</span>
+</div>
+<div id="calendar" class="calendar year"></div>
+</main>
+<aside id="drawer" class="drawer"><button id="close" class="close">Zamknij ×</button><div id="drawerContent"></div></aside>
+<script src="app.js"></script></body></html>
