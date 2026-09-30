@@ -120,7 +120,7 @@ function parityLabel(p){return p==='p'?'parzysty':p==='n'?'nieparzysty':p==='n/p
 function renderCalendar(){
  const start=8*60,end=22*60,scale=68/60,mon=currentMonday();
  let html='<div class="timecol"><div class="corner">#</div>';
- for(let h=8;h<=22;h++)html+=`<div class="time" style="top:${(h*60-start)*scale}px">${String(h).padStart(2,'0')}:00</div>`;
+ for(let h=8;h<=22;h++)html+=`<div class="time" style="top:${50+(h*60-start)*scale+4}px">${String(h).padStart(2,'0')}:00</div>`;
  html+='</div>';
  DAY_NAMES.forEach((displayDay,idx)=>{
    const ctx=dayContext(addDays(mon,idx));

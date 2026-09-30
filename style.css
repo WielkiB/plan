@@ -44,8 +44,13 @@ a{color:inherit}
 .calendar{min-width:980px;display:grid;grid-template-columns:72px repeat(5,1fr);position:relative}
 .corner,.dayhead{height:50px;position:sticky;top:0;z-index:5;background:#202125;border-bottom:2px solid var(--psk)}
 .dayhead{display:grid;place-items:center;font-size:12px;text-transform:uppercase;letter-spacing:.45px;font-weight:800;border-left:1px solid var(--line)}
-.times{position:relative;height:952px;background:#151619}.time{height:var(--slot);border-top:1px solid var(--line-soft);padding:6px 9px;text-align:right;color:#b8bac0;font-size:12px;font-weight:700}
-.daycol{position:relative;height:952px;border-left:1px solid var(--line);background:repeating-linear-gradient(to bottom,#18191c 0,#18191c calc(var(--slot) - 1px),#2a2c30 calc(var(--slot) - 1px),#2a2c30 var(--slot))}
+.timecol{position:relative;height:1002px;background:#151619}
+.timecol .corner{position:absolute;top:0;left:0;right:0;height:50px;z-index:7}
+.time{position:absolute;left:0;right:0;height:18px;padding:0 9px;text-align:right;color:#b8bac0;font-size:12px;font-weight:700;line-height:18px;z-index:3}
+.daycol{position:relative;height:1002px;border-left:1px solid var(--line);background:#18191c}
+.daycol::after{content:'';position:absolute;left:0;right:0;top:50px;bottom:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--slot) - 1px),#2a2c30 calc(var(--slot) - 1px),#2a2c30 var(--slot))}
+.daycol>.event,.daycol>.replacement-note,.daycol>.free-day-overlay{z-index:2}
+.daycol>.event:hover{z-index:30}
 .event{position:absolute;left:4px;right:4px;border:1px solid #45474c;background:#24262a;padding:6px 8px;overflow:hidden;color:#f2f2f2;cursor:default;transition:background .14s,border-color .14s,box-shadow .14s;box-shadow:0 2px 4px #0004;min-height:var(--event-h)}
 .event:hover{height:auto!important;min-height:var(--event-h);overflow:visible;background:#2c2e32;border-color:#696c73;z-index:30;box-shadow:0 10px 26px #000c}
 .event.has-more{cursor:pointer}
@@ -108,7 +113,6 @@ a{color:inherit}
 .lecturers-label{width:100%;font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:#92969d;margin-bottom:2px}
 
 /* Kalendarz akademicki w planie */
-.daycol{height:1002px}
 .day-date-label{position:absolute;top:0;left:0;right:0;height:50px;z-index:6;background:#202125;border-bottom:2px solid var(--psk);display:flex;align-items:center;justify-content:center;gap:7px;padding:4px 6px;text-align:center}
 .day-date-label>b{font-size:11px;letter-spacing:.35px}.day-date-label>span:not(.day-badge){font-size:10px;color:#90949b}
 .day-badge{position:absolute;left:5px;right:5px;bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:7px;line-height:12px;font-weight:800;text-transform:uppercase;letter-spacing:.25px}
@@ -117,4 +121,3 @@ a{color:inherit}
 .free-day .day-date-label{border-bottom-color:#55585f}.free-day-overlay{position:absolute;inset:50px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#777b83;text-align:center;padding:15px;background:#111214aa;z-index:2}
 .free-day-overlay strong{font-size:22px;letter-spacing:2px;color:#9a9da3}.free-day-overlay span{font-size:11px;max-width:150px;line-height:1.35}
 .replacement-day .day-date-label{border-bottom-color:#d6a84f}.replacement-note{position:absolute;top:54px;right:5px;z-index:20;max-width:calc(100% - 10px);padding:3px 6px;background:#352b16;border:1px solid #6c5727;color:#f0ca76;font-size:8px;font-weight:800;text-transform:uppercase;pointer-events:none}
-\n\n/* FIX v13.1 — jedna geometria osi czasu dla godzin, siatki i kafelków */\n.timecol{position:relative;height:1002px;background:#151619}\n.timecol .corner{position:absolute;top:0;left:0;right:0;height:50px;z-index:7}\n.timecol .time{position:absolute;left:0;right:0;height:auto;padding:0 9px;transform:translateY(-50%);border-top:0;text-align:right;color:#b8bac0;font-size:12px;font-weight:700;line-height:18px;z-index:3}\n.timecol .time:first-of-type{transform:none}\n.daycol{height:1002px;background:#18191c}\n.daycol::after{content:'';position:absolute;left:0;right:0;top:50px;bottom:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--slot) - 1px),#2a2c30 calc(var(--slot) - 1px),#2a2c30 var(--slot))}\n.daycol>.event,.daycol>.replacement-note,.daycol>.free-day-overlay{z-index:2}\n.daycol>.event:hover{z-index:30}\n
