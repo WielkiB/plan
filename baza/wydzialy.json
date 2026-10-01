@@ -28,5 +28,11 @@
     "shortName": "WZiMK",
     "color": "#818181",
     "textColor": "#FFFFFF"
+  },
+  {
+    "name": "Pion Kanclerza",
+    "shortName": "Pion Kanclerza",
+    "color": "#C92130",
+    "textColor": "#FFFFFF"
   }
 ]
